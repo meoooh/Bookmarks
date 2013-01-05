@@ -1,0 +1,23 @@
+{% if shared_bookmarks %}
+	<ul class="bookmarks">
+		{% for shared_bookmark in shared_bookmarks %}
+			<li>
+				<a href="/vote/?id={{ shared_bookmark.id }}"
+				class="vote">[+]</a>
+				<a href="{{ shared_bookmark.bookmark.link.url }}"
+				class="title" target="_blank"
+				>{{ shared_bookmark.bookmark.title|escape }}</a>
+				<br />
+				작성자:
+				<a href="/user/{{ shared_bookmark.bookmark.user.username }}/"
+				class="username"
+				>{{ shared_bookmark.bookmark.user.username }}</a> |
+				<span class="vote-count"
+				>추천점수: {{ shared_bookmark.votes }}</span> |
+				<a href="/bookmark/{{ shared_bookmark.id }}/">댓글</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p> 공유된 북마크가 없습니다</p>
+{% endif %}

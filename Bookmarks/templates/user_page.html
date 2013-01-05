@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}장고 북마크 - 사용자: {{ username }}{% endblock %}
+{% block external %}
+	<script type="text/javascript" src="/site_media/bookmark_edit.js">
+	</script>
+	<script type="text/javascript" src="/site_media/jquery.autocomplete.js">
+    </script>
+    <link rel="stylesheet" href="/site_media/jquery.autocomplete.css"
+    type="text/css" />
+{% endblock %}
+{% block head %}{{ username }}의 북마크입니다.{% endblock %}
+{% block content %}
+	{% include "bookmark_list.html" %}
+{% endblock %}

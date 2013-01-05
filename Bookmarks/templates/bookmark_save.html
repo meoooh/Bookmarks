@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}북마크 저장{% endblock %}
+{% block external %}
+	<script type="text/javascript" src="/site_media/bookmark_edit.js">
+	</script>
+	<script type="text/javascript" src="/site_media/jquery.autocomplete.js">
+	</script>
+	<script type="text/javascript" src="/site_media/tag_autocomplete.js">
+	</script>
+	<link rel="stylesheet" href="/site_media/jquery.autocomplete.css"
+	type="text/css" />
+{% endblock %}
+{% block head %}북마크를 저장하세요.{% endblock %}
+{% block content %}
+	{% include "bookmark_save_form.html" %}
+{% endblock %}
