@@ -4,6 +4,7 @@ from django.views.generic.simple import direct_to_template
 import os.path
 from bookmarks.views import *
 from django.contrib import admin
+from django.contrib.syndication.views import Feed
 
 admin.autodiscover()
 

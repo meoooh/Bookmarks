@@ -292,7 +292,10 @@ def _bookmark_save(request, form):
 			shared_bookmark.users_voted.add(request.user)
 			shared_bookmark.save()
 	else:
-		SharedBookmark.objects.get(bookmark=bookmark).delete()
+		try:
+			SharedBookmark.objects.get(bookmark=bookmark).delete()
+		except ObjectDoesNotExist:
+			pass
 
 	# 북마크를 저장합니다.
 	bookmark.save()

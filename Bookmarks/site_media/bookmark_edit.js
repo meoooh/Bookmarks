@@ -14,7 +14,7 @@ function bookmark_save(){
 		title: item.find("#id_title").val(),
 		tags: item.find("#id_tags").val(),
 		share: item.find("#id_share").attr("checked"),
-		csrfmiddlewaretoken: item.find("#csrf_token").val()
+		csrfmiddlewaretoken: item.find("input[name=csrfmiddlewaretoken]").val()
 	};
 
 	$.post("/save/?ajax", data, function(result){
